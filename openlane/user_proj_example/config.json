@@ -1,5 +1,5 @@
 {
-    "DESIGN_NAME": "user_proj_example",
+    "DESIGN_NAME": "bitty",
     "DESIGN_IS_CORE": 0,
     "VERILOG_FILES": [
         "dir::../../verilog/rtl/defines.v",

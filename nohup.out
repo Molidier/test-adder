@@ -1,0 +1,55 @@
+if [ -d "/home/molidier/test-adder/caravel" ]; then\
+	echo "Deleting exisiting /home/molidier/test-adder/caravel" && \
+	rm -rf /home/molidier/test-adder/caravel && sleep 2;\
+fi
+Deleting exisiting /home/molidier/test-adder/caravel
+echo "Installing caravel-lite.."
+Installing caravel-lite..
+git clone -b mpw-9j https://github.com/efabless/caravel-lite /home/molidier/test-adder/caravel --depth=1
+Cloning into '/home/molidier/test-adder/caravel'...
+make: *** [Makefile:104: install] Interrupt
+if [ -d "/home/molidier/test-adder/caravel" ]; then\
+	echo "Deleting exisiting /home/molidier/test-adder/caravel" && \
+	rm -rf /home/molidier/test-adder/caravel && sleep 2;\
+fi
+echo "Installing caravel-lite.."
+Installing caravel-lite..
+git clone -b mpw-9j https://github.com/efabless/caravel-lite /home/molidier/test-adder/caravel --depth=1
+Cloning into '/home/molidier/test-adder/caravel'...
+Note: switching to '48f5e70b205848abcd89e33f7912d6932e94b152'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  28% (100/349)Updating files:  29% (102/349)Updating files:  30% (105/349)Updating files:  31% (109/349)Updating files:  32% (112/349)Updating files:  33% (116/349)Updating files:  34% (119/349)Updating files:  35% (123/349)Updating files:  36% (126/349)Updating files:  36% (128/349)Updating files:  37% (130/349)Updating files:  38% (133/349)Updating files:  39% (137/349)Updating files:  40% (140/349)Updating files:  41% (144/349)Updating files:  42% (147/349)Updating files:  43% (151/349)Updating files:  44% (154/349)Updating files:  45% (158/349)Updating files:  46% (161/349)Updating files:  47% (165/349)Updating files:  48% (168/349)Updating files:  49% (172/349)Updating files:  50% (175/349)Updating files:  51% (178/349)Updating files:  52% (182/349)Updating files:  53% (185/349)Updating files:  54% (189/349)Updating files:  55% (192/349)Updating files:  56% (196/349)Updating files:  57% (199/349)Updating files:  58% (203/349)Updating files:  59% (206/349)Updating files:  60% (210/349)Updating files:  61% (213/349)Updating files:  62% (217/349)Updating files:  63% (220/349)Updating files:  64% (224/349)Updating files:  65% (227/349)Updating files:  66% (231/349)Updating files:  67% (234/349)Updating files:  68% (238/349)Updating files:  69% (241/349)Updating files:  70% (245/349)Updating files:  71% (248/349)Updating files:  72% (252/349)Updating files:  73% (255/349)Updating files:  74% (259/349)Updating files:  75% (262/349)Updating files:  76% (266/349)Updating files:  77% (269/349)Updating files:  78% (273/349)Updating files:  79% (276/349)Updating files:  80% (280/349)Updating files:  81% (283/349)Updating files:  82% (287/349)Updating files:  83% (290/349)Updating files:  84% (294/349)Updating files:  85% (297/349)Updating files:  86% (301/349)Updating files:  87% (304/349)Updating files:  88% (308/349)Updating files:  89% (311/349)Updating files:  90% (315/349)Updating files:  91% (318/349)Updating files:  92% (322/349)Updating files:  93% (325/349)Updating files:  94% (329/349)Updating files:  95% (332/349)Updating files:  96% (336/349)Updating files:  97% (339/349)Updating files:  98% (343/349)Updating files:  99% (346/349)Updating files: 100% (349/349)Updating files: 100% (349/349), done.
+export CARAVEL_ROOT=/home/molidier/test-adder/caravel && export MPW_TAG=mpw-9j && make -f /home/molidier/test-adder/caravel/Makefile check-env
+make[1]: Entering directory '/home/molidier/test-adder'
+make[1]: Nothing to be done for 'check-env'.
+make[1]: Leaving directory '/home/molidier/test-adder'
+export CARAVEL_ROOT=/home/molidier/test-adder/caravel && export MPW_TAG=mpw-9j && make -f /home/molidier/test-adder/caravel/Makefile install_mcw
+make[1]: Entering directory '/home/molidier/test-adder'
+if [ -d "/home/molidier/test-adder/mgmt_core_wrapper" ]; then \
+	echo "Deleting existing /home/molidier/test-adder/mgmt_core_wrapper" && \
+	rm -rf /home/molidier/test-adder/mgmt_core_wrapper && sleep 2;\
+fi
+Deleting existing /home/molidier/test-adder/mgmt_core_wrapper
+Installing mcw-litex-vexriscv..
+Cloning into '/home/molidier/test-adder/mgmt_core_wrapper'...
+fatal: the remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
+make[1]: *** [/home/molidier/test-adder/caravel/Makefile:1224: install_mcw] Error 128
+make[1]: Leaving directory '/home/molidier/test-adder'
+make: *** [Makefile:98: install_mcw] Error 2
