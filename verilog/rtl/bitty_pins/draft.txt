@@ -1,0 +1,3 @@
+read_verilog cpu.v alu.v bitty.v mux.v
+proc; opt
+write_verilog cpu_s.v alu_s.v bitty_s.v mux_s.v

@@ -1,0 +1,5 @@
+read_verilog cpu.v
+proc; opt
+techmap; opt
+write_verilog cpu_s.v
+show
