@@ -3,7 +3,7 @@
 (* cells_not_processed =  1  *)
 (* src = "bigger.v:2" *)
 module bigger(clk, reset, run, done, instr, d_out);
-  (* src = "bigger.v:64" *)
+  (* src = "bigger.v:62" *)
   wire [1:0] _00_;
   wire [1:0] _01_;
   wire [1:0] _02_;
@@ -14,67 +14,67 @@ module bigger(clk, reset, run, done, instr, d_out);
   wire _07_;
   wire _08_;
   wire _09_;
-  (* src = "bigger.v:70" *)
+  (* src = "bigger.v:68" *)
   wire _10_;
   wire [1:0] _11_;
-  (* src = "bigger.v:80|bigger.v:76|<techmap.v>:428" *)
+  (* src = "bigger.v:78|bigger.v:74|<techmap.v>:428" *)
   wire [1:0] _12_;
-  (* src = "bigger.v:80|bigger.v:76|<techmap.v>:445" *)
+  (* src = "bigger.v:78|bigger.v:74|<techmap.v>:445" *)
   wire _13_;
-  (* src = "bigger.v:23" *)
+  (* src = "bigger.v:24" *)
   wire [7:0] addr;
   (* src = "bigger.v:3" *)
   input clk;
-  (* src = "bigger.v:19" *)
+  (* src = "bigger.v:20" *)
   reg [1:0] cur_state;
-  (* src = "bigger.v:9" *)
+  (* src = "bigger.v:10" *)
   output [15:0] d_out;
-  (* src = "bigger.v:7" *)
-  output done;
   (* src = "bigger.v:8" *)
+  output done;
+  (* src = "bigger.v:9" *)
   output [15:0] instr;
-  (* src = "bigger.v:22" *)
+  (* src = "bigger.v:23" *)
   wire [15:0] mem_out;
-  (* src = "bigger.v:24" *)
+  (* src = "bigger.v:25" *)
   wire [7:0] new_pc;
-  (* src = "bigger.v:19" *)
+  (* src = "bigger.v:20" *)
   wire [1:0] next_state;
-  (* src = "bigger.v:4" *)
-  input reset;
   (* src = "bigger.v:5" *)
+  input reset;
+  (* src = "bigger.v:6" *)
   input run;
-  (* src = "bigger.v:21" *)
+  (* src = "bigger.v:22" *)
   wire run_bitty;
-  assign _07_ = _06_[0] |(* src = "bigger.v:58|bigger.v:54" *)  _05_[1];
-  assign _12_[1] = _01_[0] |(* src = "bigger.v:80|bigger.v:76|<techmap.v>:441" *)  _01_[1];
-  assign _12_[0] = _01_[0] |(* src = "bigger.v:80|bigger.v:76|<techmap.v>:441" *)  _02_[1];
-  assign _03_[0] = run_bitty |(* src = "bigger.v:80|bigger.v:76|<techmap.v>:445" *)  _01_[0];
-  assign _03_[1] = _01_[1] |(* src = "bigger.v:80|bigger.v:76|<techmap.v>:445" *)  _02_[1];
-  assign _13_ = _03_[0] |(* src = "bigger.v:80|bigger.v:76|<techmap.v>:445" *)  _03_[1];
-  assign _08_ = cur_state[0] |(* src = "bigger.v:79|bigger.v:76" *)  _05_[1];
-  assign _09_ = _06_[0] |(* src = "bigger.v:78|bigger.v:76" *)  cur_state[1];
-  assign _04_ = cur_state[0] |(* src = "bigger.v:77|bigger.v:76" *)  cur_state[1];
-  assign _01_[0] = ~(* src = "bigger.v:79|bigger.v:76" *) _08_;
-  assign _01_[1] = ~(* src = "bigger.v:78|bigger.v:76" *) _09_;
-  assign _02_[1] = ~(* src = "bigger.v:77|bigger.v:76" *) _04_;
-  assign _10_ = reset |(* src = "bigger.v:70" *)  done;
-  assign run_bitty = ~(* src = "bigger.v:58|bigger.v:54" *) _07_;
-  assign next_state[0] = _13_ ? (* src = "bigger.v:80|bigger.v:76|<techmap.v>:445" *) _12_[0] : 1'hx;
-  assign next_state[1] = _13_ ? (* src = "bigger.v:80|bigger.v:76|<techmap.v>:445" *) _12_[1] : 1'hx;
-  assign _11_[0] = run ? (* src = "bigger.v:65" *) next_state[0] : cur_state[0];
-  assign _11_[1] = run ? (* src = "bigger.v:65" *) next_state[1] : cur_state[1];
-  assign _00_[0] = _10_ ? (* src = "bigger.v:70" *) 1'h0 : _11_[0];
-  assign _00_[1] = _10_ ? (* src = "bigger.v:70" *) 1'h0 : _11_[1];
-  (* src = "bigger.v:64" *)
+  assign _07_ = _06_[0] |(* src = "bigger.v:56|bigger.v:52" *)  _05_[1];
+  assign _12_[1] = _01_[0] |(* src = "bigger.v:78|bigger.v:74|<techmap.v>:441" *)  _01_[1];
+  assign _12_[0] = _01_[0] |(* src = "bigger.v:78|bigger.v:74|<techmap.v>:441" *)  _02_[1];
+  assign _03_[0] = run_bitty |(* src = "bigger.v:78|bigger.v:74|<techmap.v>:445" *)  _01_[0];
+  assign _03_[1] = _01_[1] |(* src = "bigger.v:78|bigger.v:74|<techmap.v>:445" *)  _02_[1];
+  assign _13_ = _03_[0] |(* src = "bigger.v:78|bigger.v:74|<techmap.v>:445" *)  _03_[1];
+  assign _08_ = cur_state[0] |(* src = "bigger.v:77|bigger.v:74" *)  _05_[1];
+  assign _09_ = _06_[0] |(* src = "bigger.v:76|bigger.v:74" *)  cur_state[1];
+  assign _04_ = cur_state[0] |(* src = "bigger.v:75|bigger.v:74" *)  cur_state[1];
+  assign _01_[0] = ~(* src = "bigger.v:77|bigger.v:74" *) _08_;
+  assign _01_[1] = ~(* src = "bigger.v:76|bigger.v:74" *) _09_;
+  assign _02_[1] = ~(* src = "bigger.v:75|bigger.v:74" *) _04_;
+  assign _10_ = reset |(* src = "bigger.v:68" *)  done;
+  assign run_bitty = ~(* src = "bigger.v:56|bigger.v:52" *) _07_;
+  assign next_state[0] = _13_ ? (* src = "bigger.v:78|bigger.v:74|<techmap.v>:445" *) _12_[0] : 1'hx;
+  assign next_state[1] = _13_ ? (* src = "bigger.v:78|bigger.v:74|<techmap.v>:445" *) _12_[1] : 1'hx;
+  assign _11_[0] = run ? (* src = "bigger.v:63" *) next_state[0] : cur_state[0];
+  assign _11_[1] = run ? (* src = "bigger.v:63" *) next_state[1] : cur_state[1];
+  assign _00_[0] = _10_ ? (* src = "bigger.v:68" *) 1'h0 : _11_[0];
+  assign _00_[1] = _10_ ? (* src = "bigger.v:68" *) 1'h0 : _11_[1];
+  (* src = "bigger.v:62" *)
   always @(posedge clk)
       cur_state[0] <= _00_[0];
-  (* src = "bigger.v:64" *)
+  (* src = "bigger.v:62" *)
   always @(posedge clk)
       cur_state[1] <= _00_[1];
-  assign _05_[1] = cur_state[1] ^(* src = "bigger.v:58|bigger.v:54" *)  1'h1;
-  assign _06_[0] = cur_state[0] ^(* src = "bigger.v:78|bigger.v:76" *)  1'h1;
+  assign _05_[1] = cur_state[1] ^(* src = "bigger.v:56|bigger.v:52" *)  1'h1;
+  assign _06_[0] = cur_state[0] ^(* src = "bigger.v:76|bigger.v:74" *)  1'h1;
   (* module_not_derived = 32'd1 *)
-  (* src = "bigger.v:35" *)
+  (* src = "bigger.v:34" *)
   pc instance1 (
     .clk(clk),
     .d_in(new_pc),
@@ -83,14 +83,14 @@ module bigger(clk, reset, run, done, instr, d_out);
     .reset(reset)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "bigger.v:43" *)
+  (* src = "bigger.v:42" *)
   memory instance2 (
     .addr(addr),
     .clk(clk),
     .out(mem_out)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "bigger.v:88" *)
+  (* src = "bigger.v:86" *)
   bitty instance3 (
     .clk(clk),
     .d_instr(mem_out),
@@ -103,7 +103,6 @@ module bigger(clk, reset, run, done, instr, d_out);
   (* src = "bigger.v:27" *)
   branch_logic instance4 (
     .address(addr),
-    .done(done),
     .instruction(mem_out),
     .last_alu_result(d_out),
     .new_pc(new_pc)

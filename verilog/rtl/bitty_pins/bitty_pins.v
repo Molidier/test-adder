@@ -8,29 +8,29 @@ module bitty_pins #(
 `endif
 
     // Wishbone Slave ports (WB MI A)
-    input wb_clk_i,
-    input wb_rst_i,
-    input wbs_stb_i,
-    input wbs_cyc_i,
-    input wbs_we_i,
-    input [3:0] wbs_sel_i,
-    input [31:0] wbs_dat_i,
-    input [31:0] wbs_adr_i,
-    output wbs_ack_o,
+    input wb_clk_i, // Verilator lint_off UNUSED
+    input wb_rst_i,// Verilator lint_off UNUSED
+    input wbs_stb_i,// Verilator lint_off UNUSED
+    input wbs_cyc_i,// Verilator lint_off UNUSED
+    input wbs_we_i,// Verilator lint_off UNUSED
+    input [3:0] wbs_sel_i,// Verilator lint_off UNUSED
+    input [31:0] wbs_dat_i,// Verilator lint_off UNUSED
+    input [31:0] wbs_adr_i,// Verilator lint_off UNUSED
+    output wbs_ack_o,// Verilator lint_off UNUSED
     output [31:0] wbs_dat_o, // to communicate with other components within a chip
 
     // Logic Analyzer Signals
-    input  [127:0] la_data_in,
-    output [127:0] la_data_out,
-    input  [127:0] la_oenb,
+    input  [127:0] la_data_in,// Verilator lint_off UNUSED
+    output [127:0] la_data_out,// Verilator lint_off UNUSED
+    input  [127:0] la_oenb,// Verilator lint_off UNUSED
 
     // IOs
-    input  [BITS-1:0] io_in,
-    output [BITS-1:0] io_out,
-    output [BITS-1:0] io_oeb,
+    input  [BITS-1:0] io_in,// Verilator lint_off UNUSED
+    output [BITS-1:0] io_out,// Verilator lint_off UNUSED
+    output [BITS-1:0] io_oeb,// Verilator lint_off UNUSED
 
     // IRQ
-    output [2:0] irq
+    output [2:0] irq // Verilator lint_off UNUSED
 );
     wire clk;
     wire rst;
@@ -69,7 +69,7 @@ module bitty_pins #(
         .clk(clk),
         .reset(rst),
         .done(wbs_ack_o),
-        .instr(wbs_dat_o),//should be replaced with another pin/port
+        .instr(wbs_dat_o[15:0]),//should be replaced with another pin/port
         .d_out(io_out)
     );
 

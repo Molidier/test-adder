@@ -10,7 +10,7 @@ module dff(
     output reg [15:0] mux_out
 
 );
-    always @(posedge clk or posedge reset) begin
+    always @(posedge clk) begin
         if (reset) begin
             /* verilator lint_off BLKSEQ */
             mux_out = starting;

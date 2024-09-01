@@ -63,4 +63,5 @@
 `define OENB_INIT 1'b0
 `define DM_INIT 3'b001
 
+/* verilator lint_off EOFNEWLINE */
 `endif // __GLOBAL_DEFINE_H

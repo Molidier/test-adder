@@ -5,8 +5,9 @@ module memory(
     input [7:0] addr,
     output reg [15:0] out
 );
-    reg [15:0] memory_array [0:255]; // 256 instructions each with 16 bits
-   /* initial begin
+    assign out = 16'b0;
+    //reg [15:0] memory_array [0:255]; // 256 instructions each with 16 bits
+    /*initial begin
         $readmemh("instructions.txt", memory_array);
     end
 
@@ -49,9 +50,9 @@ module branch_logic (
 
     //states cur_state, next_state;
 
-    logic [1:0] branch_cond;
-    logic [7:0] immediate;
-    logic [1:0] format;
+    reg [1:0] branch_cond;
+    reg [7:0] immediate;
+    reg [1:0] format;
     assign branch_cond = instruction[3:2];
     assign immediate = instruction[11:4];
     assign format = instruction[1:0];

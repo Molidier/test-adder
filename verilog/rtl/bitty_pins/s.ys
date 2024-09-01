@@ -1,5 +1,4 @@
-read_verilog cpu.v
+read_verilog fetch_unit.v
 proc; opt
 techmap; opt
-write_verilog cpu_s.v
-show
+write_verilog fetch_unit_s.v

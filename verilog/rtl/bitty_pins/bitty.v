@@ -6,7 +6,8 @@ module bitty(
     input [15:0] d_instr,
 
     output [15:0] d_out,
-    output done
+    output done,
+    //output [15:0] im_d_check
 );
     genvar k;
     wire [3:0] mux_sel;
@@ -69,6 +70,12 @@ module bitty(
         end
     endgenerate
 
+    //wire [15:0] im_d_mux;
+    //assign im_d_mux = im_d;
+
+
+
+
     mux mux_inst(
         .reg0(out[0]),
         .reg1(out[1]),
@@ -79,7 +86,7 @@ module bitty(
         .reg6(out[6]),
         .reg7(out[7]),
         .im_d(im_d),
-        .def_val(0),
+        .def_val(16'h0000),
         .mux_sel(mux_sel),
         .mux_out(out_mux)
     );
@@ -90,7 +97,7 @@ module bitty(
 
     // Assigning out array elements to module outputs
     assign d_out = regc;
-    
+    //assign im_d_check = im_d_mux;
 
     /*assign rega = regs;
     assign regb = out_mux;
