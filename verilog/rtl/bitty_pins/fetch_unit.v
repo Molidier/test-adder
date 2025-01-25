@@ -5,15 +5,14 @@ module memory(
     input [7:0] addr,
     output reg [15:0] out
 );
-    assign out = 16'b0;
-    //reg [15:0] memory_array [0:255]; // 256 instructions each with 16 bits
-    /*initial begin
+    /*reg [15:0] memory_array [0:255]; // 256 instructions each with 16 bits
+    initial begin
         $readmemh("instructions.txt", memory_array);
     end
 
     always @(posedge clk) begin
         out <= memory_array[addr];
-    end*/
+    */
 endmodule
 
 module pc(

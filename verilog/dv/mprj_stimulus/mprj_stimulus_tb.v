@@ -43,7 +43,7 @@ module mprj_stimulus_tb;
 
     `ifdef ENABLE_SDF
 		initial begin
-			$sdf_annotate("../../../sdf/user_proj_example.sdf", uut.mprj.mprj) ;
+			$sdf_annotate("../../../sdf/bitty_pins.sdf", uut.mprj.mprj) ;
 			$sdf_annotate("../../../mgmt_core_wrapper/sdf/DFFRAM.sdf", uut.soc.DFFRAM_0) ;
 			$sdf_annotate("../../../mgmt_core_wrapper/sdf/mgmt_core.sdf", uut.soc.core) ;
 			$sdf_annotate("../../../caravel/sdf/housekeeping.sdf", uut.housekeeping) ;

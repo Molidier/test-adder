@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1725105086
+timestamp 1725271098
 << obsli1 >>
 rect 1104 2159 558808 349809
 << obsm1 >>
@@ -2295,7 +2295,7 @@ string FIXED_BBOX 0 0 560000 352000
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 52978518
-string GDS_FILE /home/molidier/test-adder/openlane/bitty_pins/runs/24_08_31_16_38/results/signoff/bitty_pins.magic.gds
+string GDS_FILE /home/molidier/test-adder/openlane/bitty_pins/runs/24_09_02_13_44/results/signoff/bitty_pins.magic.gds
 string GDS_START 408354
 << end >>
 

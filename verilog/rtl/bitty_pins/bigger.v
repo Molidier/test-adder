@@ -8,7 +8,7 @@ module bigger(
     output done,
     output [15:0] instr,
     output [15:0] d_out,
-    //output [15:0] im_d_check
+    output [15:0] im_d_check
 );
 
  
@@ -90,6 +90,7 @@ module bigger(
         .d_instr(mem_out),
         .done(done),
         .d_out(d_out),
+        .im_d_check(im_d_check)
     );
 
  

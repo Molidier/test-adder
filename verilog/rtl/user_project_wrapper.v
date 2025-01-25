@@ -48,22 +48,24 @@ module user_project_wrapper #(
     input wb_rst_i,
     input wbs_stb_i,
     input wbs_cyc_i,
-    input wbs_we_i,
-    input [3:0] wbs_sel_i,
-    input [31:0] wbs_dat_i,
-    input [31:0] wbs_adr_i,
-    output wbs_ack_o,
-    output [31:0] wbs_dat_o,
+    input wbs_we_i, //write enable 
+    input [3:0] wbs_sel_i, //specify which bytes in a word are active during a transaction
+    input [31:0] wbs_dat_i, //DI signal for writing to memory
+    input [31:0] wbs_adr_i, //specify which mem location to access
+    output wbs_ack_o, //acknowledgment -> indicationg the completion of a transaction
+    output [31:0] wbs_dat_o, //DO signal to reading from memory
 
     // Logic Analyzer Signals
     input  [127:0] la_data_in,
     output [127:0] la_data_out,
-    input  [127:0] la_oenb,
+    input  [127:0] la_oenb, 
 
     // IOs
-    input  [`MPRJ_IO_PADS-1:0] io_in,
-    output [`MPRJ_IO_PADS-1:0] io_out,
-    output [`MPRJ_IO_PADS-1:0] io_oeb,
+    //They should be controlled by oeb, because GPIO has only 38 pins overall
+    input  [`MPRJ_IO_PADS-1:0] io_in, //GPIO inputs
+    output [`MPRJ_IO_PADS-1:0] io_out, //GPIO outputs
+    //Set each pin either I or O 
+    output [`MPRJ_IO_PADS-1:0] io_oeb,//if 0 -> output, if 1-> input //GPIO direction (input/output enable)
 
     // Analog (direct connection to GPIO pad---use with caution)
     // Note that analog I/O is not available on the 7 lowest-numbered
@@ -82,7 +84,7 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
+bitty_pins mprj (
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),	// User area 1 1.8V power
 	.vssd1(vssd1),	// User area 1 digital ground

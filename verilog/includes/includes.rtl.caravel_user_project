@@ -13,8 +13,18 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
+
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
--v $(USER_PROJECT_VERILOG)/rtl/user_proj_example.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/bitty_pins.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/alu_s.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/bigger_s.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/bitty_s.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/cpu_s.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/dff_s.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/fetch_unit_s.v
+-v $(USER_PROJECT_VERILOG)/rtl/bitty_pins/mux_s.v
+
+
 
  

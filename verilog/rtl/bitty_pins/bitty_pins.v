@@ -19,7 +19,7 @@ module bitty_pins #(
     output wbs_ack_o,// Verilator lint_off UNUSED
     output [31:0] wbs_dat_o, // to communicate with other components within a chip
 
-    // Logic Analyzer Signals
+    // Logic Analyzer Signals ->
     input  [127:0] la_data_in,// Verilator lint_off UNUSED
     output [127:0] la_data_out,// Verilator lint_off UNUSED
     input  [127:0] la_oenb,// Verilator lint_off UNUSED
@@ -44,8 +44,8 @@ module bitty_pins #(
     wire [BITS-1:0] la_write;
 
     // WB MI A
-    assign valid = wbs_cyc_i && wbs_stb_i; 
-    assign wstrb = wbs_sel_i & {4{wbs_we_i}};
+    assign valid = wbs_cyc_i && wbs_stb_i; //both are high when tranaction of WBS starts
+    assign wstrb = wbs_sel_i & {4{wbs_we_i}};//specify which bytes in word are active during yhe transaction
     assign wbs_dat_o = {{(32-BITS){1'b0}}, rdata};
     assign wdata = wbs_dat_i[BITS-1:0];
 
@@ -64,12 +64,18 @@ module bitty_pins #(
     assign clk = (~la_oenb[64]) ? la_data_in[64]: wb_clk_i;
     assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
 
+    always @(posedge clk) begin
+        
+    end
+
+    wire d_instr = 16'b0;
+
     bigger instance_bigger(
         .run(1'b1),
         .clk(clk),
         .reset(rst),
         .done(wbs_ack_o),
-        .instr(wbs_dat_o[15:0]),//should be replaced with another pin/port
+        .instr(d_instr),//should be replaced with another pin/port
         .d_out(io_out)
     );
 
